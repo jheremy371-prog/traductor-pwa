@@ -1,0 +1,285 @@
+/* =========================================
+   VARIABLES DE TEMA (DARK MODE)
+   ========================================= */
+:root {
+  --bg-main: #121212;
+  --card-bg: #1e1e1e;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-color: #646cff;
+  --accent-hover: #535bf2;
+  --danger-color: #ff4a4a;
+  --border-radius: 16px;
+  --transition-speed: 0.3s;
+}
+
+/* =========================================
+   RESET Y ESTILOS GLOBALES
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Reemplaza el body y añade #root en tu App.css */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  margin: 0;
+  min-height: 100vh;
+  overscroll-behavior-y: none; 
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Esta es la línea mágica que lo centra verticalmente */
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* =========================================
+   CONTENEDOR MÓVIL PRINCIPAL
+   ========================================= */
+.mobile-container {
+  width: 100%;
+  max-width: 480px; /* Ancho óptimo para celular */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+header {
+  text-align: center;
+  margin-top: 10px;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(45deg, #646cff, #a0a0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+/* =========================================
+   TARJETA DE TRADUCCIÓN
+   ========================================= */
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Selectores de Idioma */
+.language-selectors {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+select {
+  flex: 1;
+  background-color: #2a2a2a;
+  color: var(--text-primary);
+  border: 1px solid #333;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  cursor: pointer;
+  appearance: none; /* Limpia el estilo nativo del navegador */
+  text-align: center;
+}
+
+select:focus {
+  border-color: var(--accent-color);
+}
+
+.arrow {
+  color: var(--text-secondary);
+  font-weight: bold;
+}
+
+/* Área de Texto y Micrófono */
+.input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+textarea {
+  width: 100%;
+  background-color: #2a2a2a;
+  color: var(--text-primary);
+  border: 1px solid #333;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+  min-height: 120px;
+  transition: border-color var(--transition-speed);
+}
+
+textarea:focus {
+  border-color: var(--accent-color);
+}
+
+textarea::placeholder {
+  color: #666;
+}
+
+/* Botones */
+.mic-btn {
+  align-self: flex-end;
+  background-color: #333;
+  color: var(--text-primary);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all var(--transition-speed) ease;
+}
+
+.mic-btn:hover {
+  background-color: #444;
+}
+
+.mic-btn.listening {
+  background-color: var(--danger-color);
+  animation: pulse 1.5s infinite;
+}
+
+.translate-btn {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+  margin-top: 4px;
+}
+
+.translate-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+.translate-btn:active {
+  transform: scale(0.98);
+}
+
+/* Área de Resultado */
+.result-area {
+  background-color: #2a2a2a;
+  border-left: 4px solid var(--accent-color);
+  padding: 16px;
+  border-radius: 0 12px 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.translated-output {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #e0e0e0;
+}
+
+.listen-btn {
+  align-self: flex-start;
+  background: rgba(100, 108, 255, 0.1);
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all var(--transition-speed);
+}
+
+.listen-btn:hover {
+  background: var(--accent-color);
+  color: white;
+}
+
+/* =========================================
+   SECCIÓN DE HISTORIAL
+   ========================================= */
+.history-section {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.history-section h3 {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.history-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.history-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 16px;
+}
+
+.history-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.history-langs {
+  font-size: 11px;
+  color: var(--accent-color);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.history-item strong {
+  font-size: 14px;
+  color: #888;
+}
+
+.history-item p {
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+/* =========================================
+   ANIMACIONES
+   ========================================= */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 74, 74, 0.7); }
+  70% { box-shadow: 0 0 0 12px rgba(255, 74, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 74, 74, 0); }
+}
